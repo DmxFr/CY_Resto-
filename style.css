@@ -1,4 +1,3 @@
-
 /* Google Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;&display=swap');
@@ -21,7 +20,7 @@
 }
 
 :root{
-    --main-color:#ffb411;
+    --main-color:#16c4db;
     --text-color: #1e1c2a;
     --bg-color: #fff ;
 
@@ -34,6 +33,21 @@ body{
     color: var(--text-color);
     background: var(--bg-color);
 }
+
+body.active{
+    --bg-color: #292739;
+    --text-color: #fff;
+}
+
+#darkmode{
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 1.4 rem;
+    right: 2rem;
+  
+}
+
 
 header{
     position:fixed;
@@ -282,3 +296,42 @@ section{
     gap:1.5rem;
     
 }
+
+
+
+#visiteur-module {
+    /* Style the container */
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #visiteur-module h2 {
+    /* Style the heading */
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  #visiteur-module p {
+    /* Style the paragraph */
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  #visiteur-module button {
+    /* Style the buttons */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #visiteur-module button:hover {
+    background-color: #0062cc;
+  }
+
