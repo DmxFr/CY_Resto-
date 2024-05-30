@@ -1,14 +1,11 @@
 <?php
-// Inclure le fichier de configuration de la base de données
+
 include_once('config.inc.php');
 
-// Démarrer la session
 session_start();
 
-// Déterminer l'ID utilisateur (connecté ou non)
 $idUtilisateurs = isset($_SESSION['idUtilisateurs']) ? $_SESSION['idUtilisateurs'] : session_id();
 
-// Récupérer l'historique des commandes de l'utilisateur
 $query = "SELECT plat, quantité, adresse, ville, code_postal, telephone, dateCommande FROM commandes WHERE idUtilisateurs = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $idUtilisateurs);
@@ -61,7 +58,7 @@ $result = $stmt->get_result();
 </html>
 
 <?php
-// Fermer la connexion à la base de données
+
 $stmt->close();
 $conn->close();
 ?>
