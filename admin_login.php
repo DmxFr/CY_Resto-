@@ -21,24 +21,20 @@
 </form>
 
 <?php
-// Inclure le fichier de configuration
+
 include_once('config.inc.php');
 
-// Vérifier si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les informations d'identification
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
 
-    // Remplacez cette logique par une recherche dans votre base de données d'utilisateurs
     if ($username === "deozantoko" && $password === "Paris75020@") {
-        // Authentification réussie, créer une session et rediriger vers la page d'administration
         session_start();
         $_SESSION["username"] = $username;
         header("Location: admin_dashboard.php");
         exit();
     } else {
-        // Informer l'utilisateur que les informations d'identification sont incorrectes
+        
         echo "<p style='color:red;'>Échec de l'authentification. Veuillez réessayer.</p>";
     }
 }
