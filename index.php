@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,16 +9,21 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <!-- Lien CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Scroll-Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
 <!-- Navbar -->
 <header>
-    <div id="header-menu" onclick="toggleMenu();">&#9776;</div>
+    <div id="header-menu"></div>
     <div class="header-logo">Chez Léon</div>
     <nav class="header-navbar">
+        <a href="#accueil">Accueil</a>
+        <a href="formulaire_de_contact.html">Contact</a>
         <a href="inscription.html">Inscription</a>
         <a href="connexion.html">Connexion</a>
+        <a href="admin_login.php">Connexion Admin</a>
         <!-- Formulaire de recherche -->
         <form action="recherche.php" method="post" style="display: inline;">
             <input type="text" name="search" placeholder="Rechercher un plat" style="padding: 5px;">
@@ -27,21 +33,13 @@
         <div class="bx bx-moon" id="darkmode"></div>
     </nav>
 </header>
-<div id="sidebar">
-    <a href="#accueil">Accueil</a>
-    <a href="#apropos">A propos</a>
-    <a href="#menu">Menu</a>
-    <a href="#services">Services</a>
-    <a href="formulaire_de_contact.html">Contact</a>
-    <a href="admin_login.php">Connexion Admin</a>
-</div>
 
 <!-- Accueil -->
 <section class="accueil" id="accueil">
     <div class="accueil-text">
         <h1>Chez Léon</h1>
         <h2>La gastronomie de <br> votre choix</h2>
-        <a href="#" class="accueil-button">Voir Menu</a>
+        <a href="#menu" class="accueil-button">Voir Menu</a>
     </div>
     <div class="accueil-img">
         <img src="img/restaurant.jpg" alt="restaurant">
@@ -53,11 +51,12 @@
         <img src="img/restau-interieur2.jpg" alt="restaurant-interieur">
     </div>
     <div class="apropos-text">
-        <span>A propos de nous</span>
-        <h2>Nous aimons vous faire plaisir<br>A table !</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, nobis nostrum incidunt minus modi impedit. Aut tenetur ut corrupti voluptatibus maxime et earum suscipit ducimus nesciunt delectus, minima natus nisi.</p>
-        <a href="#" class="apropos-button">Voir plus</a>
-    </div>
+    <span>A propos de nous</span>
+    <h2>Nous aimons vous faire plaisir<br>A table !</h2>
+    <p>Bienvenue chez Chez Léon, où notre passion est de vous offrir une expérience gastronomique exceptionnelle. Depuis notre ouverture, nous nous engageons à vous servir des plats délicieux préparés avec des ingrédients de la plus haute qualité.</p>
+    <a href="Apropos.html" class="apropos-button">Voir plus</a>
+</div>
+
 </section>
 
 <section class="menu" id="menu">
@@ -117,30 +116,30 @@
         <div class="services-plat">
             <img src="img/commande.png" alt="votre commande">
             <h3>Votre Commande</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque doloribus sit architecto maxime alias quae commodi voluptas explicabo! Quibusdam soluta optio harum? Et minima a nihil deleniti repudiandae quia!</p>
+            <p>Chez Léon, nous facilitons votre expérience de commande en ligne. Parcourez notre menu varié, choisissez vos plats préférés et personnalisez votre commande selon vos goûts. Notre interface simple et intuitive vous permet de passer votre commande en quelques clics seulement.</p>
         </div>
         <!-- Service 2 -->
         <div class="services-plat">
             <img src="img/livraison.png" alt="livraison en cours">
             <h3>Livraison</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque doloribus sit architecto maxime alias quae commodi voluptas explicabo! Quibusdam soluta optio harum? Et minima a nihil deleniti repudiandae quia!</p>
+            <p>Nous savons que votre temps est précieux. C'est pourquoi nous nous engageons à livrer vos repas rapidement et en toute sécurité. Nos livreurs professionnels veillent à ce que votre commande arrive chaude et fraîche à votre porte. Profitez de la gastronomie de Chez Léon sans quitter le confort de votre domicile.</p>
         </div>
         <!-- Service 3 -->
         <div class="services-plat">
             <img src="img/livré.png" alt="commande livrée">
             <h3>Commande Livrée</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum doloremque doloribus sit architecto maxime alias quae commodi voluptas explicabo! Quibusdam soluta optio harum? Et minima a nihil deleniti repudiandae quia!</p>
+            <p>Votre commande est arrivée ! Nous espérons que vous apprécierez chaque bouchée de nos plats préparés avec soin. Si vous avez des questions ou des commentaires, notre équipe est toujours à votre écoute pour garantir votre satisfaction. Bon appétit et merci de faire confiance à Chez Léon.</p>
         </div>
     </div>
 </section>
 
 <!-- Contact -->
-<section class="connect" id="connect">
-    <div class="contect-text">
+<<section class="connect" id="connect">
+    <div class="connect-text">
         <span>Venez nous parler</span>
         <h2>Connectez-vous</h2>
     </div>
-    <a href="#" class="accueil-button">Contactez-nous</a>
+    <a href="formulaire_de_contact.html" class="accueil-button">Contactez-nous</a>
 </section>
 
 <section class="contact" id="contact">
@@ -178,9 +177,6 @@
     </div>
 </section>
 
-<!-- Scroll-Reveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
 <script>
     //DarkMode
 
@@ -195,20 +191,6 @@ darkmode.onclick = () =>{
         document.body.classList.remove('active');
     }
 }
-   // Fonction pour ouvrir le menu latéral
-function toggleMenu() {
-    var sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-}
-
-   // Ajout d'un écouteur d'événements pour fermer le menu latéral lors du clic en dehors du menu
-	document.addEventListener('click', function(event) {
-		var sidebar = document.getElementById('sidebar');
-		if (!sidebar.contains(event.target) && event.target.id !== 'header-menu') {
-			sidebar.classList.remove('active');
-		}
-	});
-
 </script>
 
 </body>
