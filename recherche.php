@@ -1,22 +1,16 @@
 <?php
-// Inclure le fichier de configuration de la base de données
+
 require_once('config.inc.php');
 
-// Vérifier si le formulaire de recherche a été soumis
 if (isset($_POST['search'])) {
-    // Récupérer le terme de recherche depuis le formulaire
     $search = mysqli_real_escape_string($conn, $_POST['search']);
 
-    // Requête SQL pour rechercher des plats correspondant au terme de recherche
     $query = "SELECT * FROM Plats WHERE nomplat LIKE '%$search%'";
 
-    // Exécuter la requête
     $result = mysqli_query($conn, $query);
 
-    // Vérifier s'il y a des résultats
     if (mysqli_num_rows($result) > 0) {
         echo "<h2>Résultats de la recherche :</h2>";
-        // Afficher les résultats de la recherche
         while ($row = mysqli_fetch_assoc($result)) {
             echo "Nom du plat : " . htmlspecialchars($row["nomplat"]) . "<br>";
             echo "Description : " . htmlspecialchars($row["description"]) . "<br>";
