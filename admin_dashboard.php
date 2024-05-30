@@ -1,18 +1,14 @@
 <?php
-// Inclure le fichier de configuration de la base de données
+
 include_once('config.inc.php');
 
-// Démarrer la session
 session_start();
 
-// Vérifier si l'utilisateur est connecté en tant qu'administrateur
 if (!isset($_SESSION['username'])) {
-    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion de l'administrateur
     header("Location: admin_login.php");
     exit();
 }
 
-// Récupérer les utilisateurs inscrits
 $query = "SELECT * FROM Utilisateurs";
 $result = mysqli_query($conn, $query);
 ?>
@@ -43,7 +39,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "Aucun utilisateur inscrit.";
 }
 
-// Fermer la connexion à la base de données
 mysqli_close($conn);
 ?>
 
