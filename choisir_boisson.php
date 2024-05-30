@@ -1,5 +1,5 @@
 <?php
-// Connexion à la base de données
+
 $servername = "localhost";
 $username = "root";
 $password = "Woippy57@";
@@ -7,12 +7,10 @@ $dbname = "restaurant_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Vérifiez la connexion
 if ($conn->connect_error) {
     die("La connexion a échoué: " . $conn->connect_error);
 }
 
-// Récupérez les boissons disponibles
 $sql = "SELECT idBoissons, nom, prix, image FROM boissons";
 $result = $conn->query($sql);
 ?>
